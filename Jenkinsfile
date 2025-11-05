@@ -19,7 +19,7 @@ pipeline {
                 withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
                     sh """
                         docker login -u $DOCKER_USER -p $DOCKER_PASS
-                        docker build -t $DOCKER_USER/winning-number-service:latest .
+                        docker build -t $DOCKER_USER/winning-number-service:latest --build-arg JAR_FILE=target/*.jar .
                         docker push $DOCKER_USER/winning-number-service:latest
                     """
                 }
