@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: winning-number-service
+  labels:
+    app: winning-number-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: winning-number-service
+  template:
+    metadata:
+      labels:
+        app: winning-number-service
+    spec:
+      containers:
+        - name: winning-number-service
+          image: winning-number-service:latest
+          ports:
+            - containerPort: 8085
