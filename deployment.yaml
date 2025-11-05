@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: winning-number-service
-          image: carmata/winning-number-service:latest
+          image: winning-number-service:latest
           imagePullPolicy: Never
           ports:
             - containerPort: 8085
