@@ -17,5 +17,6 @@ spec:
       containers:
         - name: winning-number-service
           image: winning-number-service:latest
+          imagePullPolicy: Never
           ports:
             - containerPort: 8085
